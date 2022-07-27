@@ -20,7 +20,7 @@ namespace ContactList.Services
         }
 
 
-
+        //pobranie listy wszystkich kontaktów
         public IEnumerable<ContactDto> GetAll()
         {
             var contacts = _dbContext
@@ -31,7 +31,7 @@ namespace ContactList.Services
         }
 
 
-
+        //Pobranie jednego kontaktu po id
 
         public ContactDto GetById(int id)
         {
@@ -46,7 +46,7 @@ namespace ContactList.Services
             return result;
         }
 
-
+        //tworzenie nowego kontaktu
         public int Create(CreateContactDto dto)
         {
             var contact = _mapper.Map<Contact>(dto);
@@ -55,7 +55,7 @@ namespace ContactList.Services
             return contact.Id;
         }
 
-
+        //usuwanie nowego kontaktu
         public bool Delete(int id)
         {
             var contact = _dbContext
@@ -70,6 +70,8 @@ namespace ContactList.Services
             return true;
         }
 
+
+        //edycja nowego kontaktu
         public bool Update(UpdateContactDto dto, int id)
         {
             var contact = _dbContext

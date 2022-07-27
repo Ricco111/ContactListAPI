@@ -11,8 +11,10 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace ContactList.Controllers
 {
+
+    //Kontroler obsługujący działania na kontaktach CRUD
     [Route("api/contact")]
-    [Authorize]
+    [Authorize] //wymagana autoryzacja aby obsługiwać endpointy
     public class ContactController : ControllerBase
     {
         private readonly IContactServices _contactService;
@@ -27,8 +29,8 @@ namespace ContactList.Controllers
 
 
         [HttpGet]
-        [AllowAnonymous] //zezwolenie 
-        //pobranie listy kontaktów
+        [AllowAnonymous] //zezwolenie na obugę bez autoryzacji tylko tego endpointu
+        //pobranie listy wszystkich kontaktów
         public ActionResult<IEnumerable<Contact>> GetAll()
         {
             var contactsDtos = _contactService.GetAll();
@@ -37,10 +39,8 @@ namespace ContactList.Controllers
 
 
 
-
-
         [HttpGet("{id}")]
-        //Pobranie jednego kontaktu
+        //Pobranie jednego kontaktu po id
         public ActionResult<Contact> Get([FromRoute] int id)
         {
             var contact = _contactService.GetById(id);

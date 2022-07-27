@@ -18,6 +18,7 @@ namespace ContactList.Controllers
         {
             _accountService = accountService;
         }
+        //Endpoint rejestracji użytkownika
         [HttpPost("register")]
         public ActionResult RegisterUser([FromBody] RegisterUserDto dto)
         {
@@ -25,6 +26,8 @@ namespace ContactList.Controllers
             return Ok();
         }
 
+
+        //endpoint logowania
         [HttpPost("login")]
         public ActionResult Login([FromBody] LoginDto dto)
         {

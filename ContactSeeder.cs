@@ -15,7 +15,7 @@ namespace ContactList
         {
             _dbContext = dbContext;
         }
-        //metoda do utworzenia początkowych danych
+        //funkcja do utworzenia początkowych danych
         public void Seed()
         {
             //sprawdzenie połączania do BD
