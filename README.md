@@ -8,7 +8,7 @@ Po zalogowaniu wygenerowany JWT działa 15min.
 
 
 Opis klas i metod
-ContactDbContext.cs - klasa konfiguracji bazy danych
+ContactDbContext.cs - klasa konfiguracji bazy danych</br>
 ContactController.cs - klasa obsługująca endpointy dla CRUD
 ContactServices.cs - klasa serwis, zawierająca logikę dla endpointów
 AccountControler.cs - klasa, kontroler, obsługująca endpointy logowania i rejestracji
